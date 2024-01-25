@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Student Table</title>
+</head>
+<body>
+    <h1>Student Table</h1>
+    <table border="1px" width="100%">
+        <tr>
+            <th>ID</th>
+            <th>Name</th>
+            <th>Email</th>
+            <th>Phone</th>
+            <th>Actions</th>
+        </tr>
+        <% if (students.length > 0) { %>
+            <% for (var i = 0; i < students.length; i++) { %>
+                <tr>
+                    <td><%- students[i].id %></td>
+                    <td><%- students[i].name %></td>
+                    <td><%- students[i].email %></td>
+                    <td><%- students[i].phone %></td>
+                    <td><a href="/delete-student?id=<%- students[i].id %>">Delete</a></td>
+                </tr>
+            <% } %>
+        <% } else { %>
+            <tr>
+                <td colspan="4">No students found</td>
+            </tr>
+        <% } %>
+    </table>
+</body>
+</html>

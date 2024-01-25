@@ -1,0 +1,1 @@
+{"name":"Amit Naskar","age":20,"course":"BCA"}
